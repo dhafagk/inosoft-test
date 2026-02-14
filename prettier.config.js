@@ -1,0 +1,20 @@
+/** @type {import("prettier").Config} */
+export default {
+    semi: true,
+    singleQuote: true,
+    singleAttributePerLine: false,
+    htmlWhitespaceSensitivity: 'css',
+    printWidth: 150,
+    plugins: ['prettier-plugin-tailwindcss'],
+    tailwindFunctions: ['clsx', 'cn'],
+    tailwindStylesheet: 'resources/css/app.css',
+    tabWidth: 4,
+    overrides: [
+        {
+            files: '**/*.yml',
+            options: {
+                tabWidth: 2,
+            },
+        },
+    ],
+};
