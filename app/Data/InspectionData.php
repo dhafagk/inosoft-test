@@ -54,6 +54,121 @@ class InspectionData
         ];
     }
 
+    public static function sowTemplates(): array
+    {
+        return [
+            [
+                'id' => '5f17d801b0ae06193e5e3bd6',
+                'name' => 'ADNOC Requirements',
+                'works' => [
+                    [
+                        '_id' => '5d8a38e7e0bb337413523a8c',
+                        'subscope' => '38b3aae109c86bc7435403d21a924649ca1e79b2',
+                        'subscope_name' => 'Coating Chemical',
+                        'fields' => [
+                            ['name' => 'External GT', 'type' => 'checkbox', 'selected' => false, 'value' => 'External GT', 'editableDescription' => true, 'requiredDescription' => false, 'drift_inspection' => false],
+                            ['name' => 'Internal GT', 'type' => 'checkbox', 'selected' => false, 'value' => 'Internal GT', 'editableDescription' => true, 'requiredDescription' => false, 'drift_inspection' => false],
+                        ],
+                    ],
+                    [
+                        '_id' => '5d8a38e7e0bb337413523a8e',
+                        'subscope' => 'f60d875bcd98a60f067a50cdb6d790efee55b1c6',
+                        'subscope_name' => 'Storage Compound',
+                        'fields' => [
+                            ['name' => 'Jet Lube HP', 'type' => 'checkbox', 'selected' => false, 'value' => 'Jet Lube HP', 'editableDescription' => true, 'requiredDescription' => false, 'drift_inspection' => false],
+                            ['name' => 'Kendex', 'type' => 'checkbox', 'selected' => false, 'value' => 'Kendex', 'editableDescription' => true, 'requiredDescription' => false, 'drift_inspection' => false],
+                            ['name' => 'PTT EP2', 'type' => 'checkbox', 'selected' => false, 'value' => 'PTT EP2', 'editableDescription' => true, 'requiredDescription' => false, 'drift_inspection' => false],
+                            ['name' => 'Bestolife Modified', 'type' => 'checkbox', 'selected' => false, 'value' => 'Bestolife Modified', 'editableDescription' => true, 'requiredDescription' => false, 'drift_inspection' => false],
+                        ],
+                    ],
+                    [
+                        '_id' => '5d8a38e7e0bb337413523a86',
+                        'subscope' => '90f9b69fcbf8f390ac4d5e5928546de9006014a9',
+                        'subscope_name' => 'Inspection',
+                        'fields' => [
+                            ['name' => 'Visual Thread', 'type' => 'checkbox', 'selected' => true, 'value' => 'Visual Thread', 'editableDescription' => true, 'requiredDescription' => false, 'drift_inspection' => false],
+                            ['name' => 'Visual Body', 'type' => 'checkbox', 'selected' => true, 'value' => 'Visual Body', 'editableDescription' => true, 'requiredDescription' => false, 'drift_inspection' => false],
+                            ['name' => 'Full Length Drift', 'type' => 'checkbox', 'selected' => true, 'value' => 'Full Length Drift', 'editableDescription' => true, 'requiredDescription' => false, 'drift_inspection' => true],
+                            ['name' => 'End Drift', 'type' => 'checkbox', 'selected' => false, 'value' => 'End Drift', 'editableDescription' => true, 'requiredDescription' => false, 'drift_inspection' => true],
+                            ['name' => 'Thread Gauging', 'type' => 'checkbox', 'selected' => false, 'value' => 'Thread Gauging', 'editableDescription' => true, 'requiredDescription' => false, 'drift_inspection' => false],
+                            ['name' => 'Tally Report', 'type' => 'checkbox', 'selected' => true, 'value' => 'Tally Report', 'editableDescription' => true, 'requiredDescription' => false, 'drift_inspection' => false],
+                        ],
+                    ],
+                    [
+                        '_id' => '5d8a38e7e0bb337413523a90',
+                        'subscope' => 'dc724af18fbdd4e59189f5fe768a5f8311527050',
+                        'subscope_name' => 'Testing',
+                        'fields' => [
+                            ['name' => 'Tensile', 'type' => 'checkbox', 'selected' => false, 'value' => 'Tensile', 'editableDescription' => true, 'requiredDescription' => false, 'drift_inspection' => false],
+                            ['name' => 'Chemical', 'type' => 'checkbox', 'selected' => false, 'value' => 'Chemical', 'editableDescription' => true, 'requiredDescription' => false, 'drift_inspection' => false],
+                            ['name' => 'Hardness', 'type' => 'checkbox', 'selected' => false, 'value' => 'Hardness', 'editableDescription' => true, 'requiredDescription' => false, 'drift_inspection' => false],
+                        ],
+                    ],
+                    [
+                        '_id' => '5d8a38e7e0bb337413523a92',
+                        'subscope' => '246279c5c0ab0418e57c98e62f538d3b706fdd71',
+                        'subscope_name' => 'TPI Survellience',
+                        'fields' => [
+                            ['name' => 'Loading', 'type' => 'checkbox', 'selected' => false, 'value' => 'Loading', 'editableDescription' => true, 'requiredDescription' => false, 'drift_inspection' => false],
+                            ['name' => 'Unloading', 'type' => 'checkbox', 'selected' => false, 'value' => 'Unloading', 'editableDescription' => true, 'requiredDescription' => false, 'drift_inspection' => false],
+                        ],
+                    ],
+                    [
+                        '_id' => '5d8a38e7e0bb337413523a8a',
+                        'subscope' => 'e8831801e2fb87001799f58c253616d120c720c3',
+                        'subscope_name' => 'Stenciling & Marking',
+                        'fields' => [
+                            ['name' => 'API Color Band', 'type' => 'checkbox', 'selected' => false, 'value' => 'API Color Band', 'editableDescription' => true, 'requiredDescription' => false, 'drift_inspection' => false],
+                            ['name' => 'Tally Marking Full Length', 'type' => 'checkbox', 'selected' => false, 'value' => 'Tally Marking Full Length', 'editableDescription' => true, 'requiredDescription' => false, 'drift_inspection' => false],
+                            ['name' => 'TPI Stencil Marking', 'type' => 'checkbox', 'selected' => false, 'value' => 'TPI Stencil Marking', 'editableDescription' => true, 'requiredDescription' => false, 'drift_inspection' => false],
+                        ],
+                    ],
+                    [
+                        '_id' => '5d8a38e7e0bb337413523a88',
+                        'subscope' => 'c2040f46102e126d791b2637599a24d57a0f88a9',
+                        'subscope_name' => 'Refurbish',
+                        'fields' => [
+                            ['name' => 'Internal Coating Full Length', 'type' => 'checkbox', 'selected' => false, 'value' => 'Internal Coating Full Length', 'editableDescription' => true, 'requiredDescription' => false, 'drift_inspection' => false],
+                            ['name' => 'Internal Cleaning/Blowing', 'type' => 'checkbox', 'selected' => false, 'value' => 'Internal Cleaning/Blowing', 'editableDescription' => true, 'requiredDescription' => false, 'drift_inspection' => false],
+                            ['name' => 'External Coating', 'type' => 'checkbox', 'selected' => false, 'value' => 'External Coating', 'editableDescription' => true, 'requiredDescription' => false, 'drift_inspection' => false],
+                        ],
+                    ],
+                ],
+            ],
+            [
+                'id' => '5f17d801b0ae06193e5e3bd7',
+                'name' => 'Standard Inspection',
+                'works' => [
+                    [
+                        '_id' => '5d8a38e7e0bb337413523a86',
+                        'subscope' => '90f9b69fcbf8f390ac4d5e5928546de9006014a9',
+                        'subscope_name' => 'Inspection',
+                        'fields' => [
+                            ['name' => 'Visual Thread', 'type' => 'checkbox', 'selected' => true, 'value' => 'Visual Thread', 'editableDescription' => true, 'requiredDescription' => false, 'drift_inspection' => false],
+                            ['name' => 'Visual Body', 'type' => 'checkbox', 'selected' => true, 'value' => 'Visual Body', 'editableDescription' => true, 'requiredDescription' => false, 'drift_inspection' => false],
+                        ],
+                    ],
+                ],
+            ],
+            [
+                'id' => '5f17d801b0ae06193e5e3bd8',
+                'name' => 'API Specification',
+                'works' => [
+                    [
+                        '_id' => '5d8a38e7e0bb337413523a86',
+                        'subscope' => '90f9b69fcbf8f390ac4d5e5928546de9006014a9',
+                        'subscope_name' => 'Inspection',
+                        'fields' => [
+                            ['name' => 'Visual Thread', 'type' => 'checkbox', 'selected' => true, 'value' => 'Visual Thread', 'editableDescription' => true, 'requiredDescription' => false, 'drift_inspection' => false],
+                            ['name' => 'Full Length Drift', 'type' => 'checkbox', 'selected' => true, 'value' => 'Full Length Drift', 'editableDescription' => true, 'requiredDescription' => false, 'drift_inspection' => true],
+                            ['name' => 'Thread Gauging', 'type' => 'checkbox', 'selected' => true, 'value' => 'Thread Gauging', 'editableDescription' => true, 'requiredDescription' => false, 'drift_inspection' => false],
+                        ],
+                    ],
+                ],
+            ],
+        ];
+    }
+
     /**
      * Get all records from the JSON file.
      */
@@ -85,9 +200,86 @@ class InspectionData
     {
         $records = self::readFile();
 
-        $record = array_merge(self::defaultRecord(), $data, [
+        // Generate inspection number
+        $year = now()->year;
+        $existingNumbers = collect($records)
+            ->filter(fn($r) => str_starts_with($r['no'] ?? '', "RRIN-{$year}-"))
+            ->count();
+        $nextNumber = str_pad((string)($existingNumbers + 1), 4, '0', STR_PAD_LEFT);
+        $inspectionNo = "RRIN-{$year}-{$nextNumber}";
+
+        // Transform items data to items_raw format
+        $itemsRaw = [];
+        if (isset($data['items']) && is_array($data['items'])) {
+            foreach ($data['items'] as $item) {
+                // Fetch item details from master data if not provided
+                $itemDetails = null;
+                if (isset($item['id_item'])) {
+                    $itemDetails = self::findItem($item['id_item']);
+                }
+
+                if (isset($item['lots']) && is_array($item['lots'])) {
+                    foreach ($item['lots'] as $lot) {
+                        $itemsRaw[] = [
+                            'id_item' => $item['id_item'],
+                            'item_code' => $itemDetails['item_code'] ?? $item['item_code'] ?? null,
+                            'item_desc' => $itemDetails['item_desc'] ?? $item['item_desc'] ?? null,
+                            'item_type' => $itemDetails['item_type'] ?? $item['item_type'] ?? null,
+                            'item_type_name' => $itemDetails['item_type_name'] ?? $item['item_type_name'] ?? null,
+                            'item_pipe_family' => $itemDetails['item_pipe_family'] ?? $item['item_pipe_family'] ?? null,
+                            'batch' => $lot['batch'],
+                            'original_batch' => $lot['batch'],
+                            'allocation' => $lot['allocation'],
+                            'owned' => $lot['owned'],
+                            'owned_name' => $lot['owned_name'],
+                            'condition' => $lot['condition'],
+                            'qty' => $lot['qty'],
+                            'inspected_qty' => 0,
+                            'balance' => $lot['qty'],
+                            'inprogress_qty' => 0,
+                            'id_quarantine' => null,
+                        ];
+                    }
+                }
+            }
+        }
+
+        // Build SOW structure
+        $sow = [];
+        if (isset($data['sow_template']) && isset($data['sow_works'])) {
+            $sow[] = [
+                'template' => $data['sow_template'],
+                'template_name' => $data['sow_template_name'] ?? '',
+                'items' => array_map(fn($item) => ['id_item' => $item['id_item']], $data['items'] ?? []),
+                'works' => $data['sow_works'],
+            ];
+        }
+
+        $record = array_merge(self::defaultRecord(), [
             'id' => Str::random(24),
+            'no' => $inspectionNo,
+            'status' => $data['status'] ?? 'New',
+            'type' => $data['type'],
+            'insp_type' => $data['insp_type'],
+            'yard' => $data['yard'],
+            'yard_name' => $data['yard_name'],
+            'customer' => [
+                'customer' => $data['customer_id'],
+                'name' => $data['customer_name'],
+            ],
+            'ecd' => $data['ecd'] ?? null,
+            'link_to' => $data['link_to'] ?? null,
+            'notes' => [
+                'initial' => [
+                    'msg' => $data['notes'] ?? '',
+                    'by' => $data['customer_name'] ?? 'System',
+                ],
+            ],
+            'items_raw' => $itemsRaw,
+            'sow' => $sow,
             'create_date' => now()->timestamp,
+            'created_by_id' => Str::random(24),
+            'created_by_name' => 'System User',
         ]);
 
         $records[] = $record;
@@ -114,6 +306,65 @@ class InspectionData
     public static function findItem(string $id): ?array
     {
         return collect(self::items())->firstWhere('id', $id);
+    }
+
+    /**
+     * Get available stock for a given item.
+     * Returns all unique combinations of batch, allocation, owner, condition with available quantities.
+     */
+    public static function getItemStock(string $itemId): array
+    {
+        // Mock stock data - in production this would query the inventory database
+        return [
+            [
+                'batch' => 'PO-2024-00457-A-RR',
+                'allocation' => 'Unallocated',
+                'owned' => '5e49e7e48ac96a718736e3f2',
+                'owned_name' => 'OFFSHORE',
+                'condition' => 'good',
+                'available_qty' => 50,
+            ],
+            [
+                'batch' => 'PO-2024-00457-A-RR',
+                'allocation' => 'Unallocated',
+                'owned' => '5e49e7e48ac96a718736e3f2',
+                'owned_name' => 'OFFSHORE',
+                'condition' => 'fair',
+                'available_qty' => 20,
+            ],
+            [
+                'batch' => 'PO-2024-00457-A-RR',
+                'allocation' => 'Allocated',
+                'owned' => '5e49e7e48ac96a718736e3f2',
+                'owned_name' => 'OFFSHORE',
+                'condition' => 'good',
+                'available_qty' => 30,
+            ],
+            [
+                'batch' => 'PO-2024-00458-B-RR',
+                'allocation' => 'Unallocated',
+                'owned' => '5e49e7e48ac96a718736e3f2',
+                'owned_name' => 'OFFSHORE',
+                'condition' => 'good',
+                'available_qty' => 100,
+            ],
+            [
+                'batch' => 'PO-2024-00458-B-RR',
+                'allocation' => 'Unallocated',
+                'owned' => '5e49e7e48ac96a718736e3f3',
+                'owned_name' => 'MITME',
+                'condition' => 'good',
+                'available_qty' => 75,
+            ],
+            [
+                'batch' => 'PO-2024-00459-C-RR',
+                'allocation' => 'Allocated',
+                'owned' => '5e49e7e48ac96a718736e3f3',
+                'owned_name' => 'MITME',
+                'condition' => 'excellent',
+                'available_qty' => 40,
+            ],
+        ];
     }
 
     private static function filePath(): string

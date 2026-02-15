@@ -8,5 +8,9 @@ Route::get('/', function () {
 })->name('home');
 
 Route::get('/inspection-record', function () {
-    return Inertia::render('InspectionRecord');
+    return Inertia::render('InspectionRecordList');
 })->name('inspection-record');
+
+Route::get('/inspection-record/create', function () {
+    return Inertia::render('InspectionRecordCreate');
+})->name('inspection-record.create');

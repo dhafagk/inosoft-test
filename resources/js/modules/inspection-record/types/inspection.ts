@@ -66,6 +66,13 @@ export interface Item {
     item_pipe_family: string;
 }
 
+export interface InspectionRecord {
+    id: string;
+    no: string;
+    status: string;
+    customer_name?: string;
+}
+
 export interface StockEntry {
     id_item: string;
     batch: string;

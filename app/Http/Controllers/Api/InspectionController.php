@@ -57,4 +57,16 @@ class InspectionController extends Controller
     {
         return response()->json(InspectionData::items());
     }
+
+    public function sowTemplates(): JsonResponse
+    {
+        return response()->json(InspectionData::sowTemplates());
+    }
+
+    public function itemStock(string $itemId): JsonResponse
+    {
+        $stock = InspectionData::getItemStock($itemId);
+
+        return response()->json($stock);
+    }
 }

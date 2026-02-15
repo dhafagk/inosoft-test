@@ -11,6 +11,7 @@ interface InspectionRecord {
     type?: string;
     create_date?: number;
     revision_date?: number;
+    ecd?: string;
     link_to?: string;
     tpi_name?: string;
     progress?: number;
@@ -40,13 +41,15 @@ export function useInspectionRecords() {
     };
 
     const transformRecord = (record: InspectionRecord, index: number): InspectionRequest => {
-        const subItems = (record.items_raw || []).map((item) => ({
-            itemDescription: item.item_desc || '',
-            ownership: item.owned_name || '',
-            lotNo: item.batch || '',
-            qty: item.qty || 0,
-            progress: record.progress ? `${Math.round(record.progress)}%` : '0%',
-        }));
+        const subItems = (record.items_raw || []).map((item) => {
+            return {
+                itemDescription: item.item_desc || '',
+                ownership: item.owned_name || '',
+                lotNo: item.batch || '',
+                qty: item.qty || 0,
+                progress: record.progress ? `${Math.round(record.progress)}%` : '0%',
+            };
+        });
 
         const numericId = record.id ? Array.from(record.id).reduce((acc, char) => acc + char.charCodeAt(0), 0) : index + 1;
 
@@ -57,9 +60,9 @@ export function useInspectionRecords() {
             scopeOfWork: record.customer?.name || '',
             type: record.insp_type || record.type || '',
             dateSubmitted: formatDate(record.create_date),
-            ecd: formatDate(record.revision_date), // not sure
+            ecd: record.ecd || '',
             relatedTo: record.link_to || '',
-            thirdParty: record.tpi_name || '',
+            thirdParty: record.tpi_name || '-',
             status: record.status || 'Open',
             subItems,
         };
@@ -75,9 +78,19 @@ export function useInspectionRecords() {
     /**
      * Computed properties for each status
      */
-    const openRecords = computed(() => filterByStatus('Open'));
-    const forReviewRecords = computed(() => filterByStatus('For Review'));
-    const completedRecords = computed(() => filterByStatus('Completed'));
+    const openRecords = computed(() => {
+        return records.value
+            .filter((r) => r.status === 'New' || r.status === 'In Progress' || r.status === 'Draft')
+            .map((record, index) => transformRecord(record, index));
+    });
+
+    const forReviewRecords = computed(() => {
+        return filterByStatus('Ready to Review');
+    });
+
+    const completedRecords = computed(() => {
+        return filterByStatus('Completed');
+    });
 
     /**
      * Fetch inspection records from API
