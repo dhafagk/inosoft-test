@@ -135,14 +135,13 @@ export function useInspectionForm() {
     };
 
     const updateLotField = (itemIndex: number, lotIndex: number, field: string, value: any) => {
-        const currentItems = formContext.values.items || [];
-        const item = currentItems[itemIndex];
-        const updatedLots = [...item.lots];
-        updatedLots[lotIndex] = {
-            ...updatedLots[lotIndex],
-            [field]: value,
-        };
-        updateItem(itemIndex, { lots: updatedLots });
+        formContext.setFieldValue(`items[${itemIndex}].lots[${lotIndex}].${field}` as any, value);
+    };
+
+    const updateLotBatch = (itemIndex: number, lotIndex: number, updates: Record<string, any>) => {
+        for (const [field, value] of Object.entries(updates)) {
+            formContext.setFieldValue(`items[${itemIndex}].lots[${lotIndex}].${field}` as any, value);
+        }
     };
 
     const resetForm = () => {
@@ -170,6 +169,7 @@ export function useInspectionForm() {
         addLotToItem,
         removeLotFromItem,
         updateLotField,
+        updateLotBatch,
         resetForm,
     };
 }

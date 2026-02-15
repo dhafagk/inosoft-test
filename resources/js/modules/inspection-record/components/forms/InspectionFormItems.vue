@@ -21,6 +21,7 @@ const emit = defineEmits<{
     removeLot: [itemIndex: number, lotIndex: number];
     itemSelected: [itemIndex: number, itemId: string];
     updateLot: [itemIndex: number, lotIndex: number, field: string, value: any];
+    updateLotBatch: [itemIndex: number, lotIndex: number, updates: Record<string, any>];
 }>();
 
 const itemOptions = computed<SelectOption[]>(() =>

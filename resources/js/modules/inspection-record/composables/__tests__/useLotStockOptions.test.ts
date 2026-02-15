@@ -131,14 +131,14 @@ describe('useLotStockOptions', () => {
 
             handleLotFieldChange(0, 0, 'batch', 'B1');
 
-            // First call: emit the field value itself
-            expect(emit).toHaveBeenCalledWith('updateLot', 0, 0, 'batch', 'B1');
-            // Reset dependent fields: allocation, owned, condition
-            expect(emit).toHaveBeenCalledWith('updateLot', 0, 0, 'allocation', '');
-            expect(emit).toHaveBeenCalledWith('updateLot', 0, 0, 'owned', '');
-            expect(emit).toHaveBeenCalledWith('updateLot', 0, 0, 'condition', '');
-            expect(emit).toHaveBeenCalledWith('updateLot', 0, 0, 'owned_name', '');
-            expect(emit).toHaveBeenCalledWith('updateLot', 0, 0, 'available_qty', 0);
+            expect(emit).toHaveBeenCalledWith('updateLotBatch', 0, 0, {
+                batch: 'B1',
+                allocation: '',
+                owned: '',
+                condition: '',
+                owned_name: '',
+                available_qty: 0,
+            });
         });
 
         it('clears condition when allocation changes', () => {
@@ -147,9 +147,13 @@ describe('useLotStockOptions', () => {
 
             handleLotFieldChange(0, 0, 'allocation', 'A1');
 
-            expect(emit).toHaveBeenCalledWith('updateLot', 0, 0, 'allocation', 'A1');
-            expect(emit).toHaveBeenCalledWith('updateLot', 0, 0, 'owned', '');
-            expect(emit).toHaveBeenCalledWith('updateLot', 0, 0, 'condition', '');
+            expect(emit).toHaveBeenCalledWith('updateLotBatch', 0, 0, {
+                allocation: 'A1',
+                owned: '',
+                condition: '',
+                owned_name: '',
+                available_qty: 0,
+            });
         });
     });
 
@@ -171,8 +175,12 @@ describe('useLotStockOptions', () => {
 
             handleLotFieldChange(0, 0, 'owned', 'O1');
 
-            expect(emit).toHaveBeenCalledWith('updateLot', 0, 0, 'owned', 'O1');
-            expect(emit).toHaveBeenCalledWith('updateLot', 0, 0, 'owned_name', 'Owner 1');
+            expect(emit).toHaveBeenCalledWith('updateLotBatch', 0, 0, {
+                owned: 'O1',
+                condition: '',
+                owned_name: 'Owner 1',
+                available_qty: 0,
+            });
         });
     });
 });

@@ -36,6 +36,7 @@ const {
     addLotToItem,
     removeLotFromItem,
     updateLotField,
+    updateLotBatch,
     setType,
     setYard,
     setCustomer,
@@ -133,6 +134,7 @@ const handleFinalSubmit = handleSubmit(async (values) => {
                 @add-lot="addLotToItem"
                 @remove-lot="removeLotFromItem"
                 @update-lot="updateLotField"
+                @update-lot-batch="updateLotBatch"
                 @item-selected="handleItemSelected"
             />
 
@@ -145,13 +147,13 @@ const handleFinalSubmit = handleSubmit(async (values) => {
             </div>
 
             <div class="flex items-center justify-between">
-                <Button type="button" variant="outline" @click="emit('cancel')" :disabled="isSubmitting"> Cancel </Button>
+                <Button type="button" variant="outline" @click="emit('cancel')"> Cancel </Button>
 
                 <div class="flex gap-3">
-                    <Button type="button" variant="secondary" @click="handleDraftSubmit" :disabled="isSubmitting">
+                    <Button type="button" variant="secondary" @click="handleDraftSubmit">
                         {{ isSubmitting ? 'Saving...' : 'Save as Draft' }}
                     </Button>
-                    <Button type="submit" :disabled="isSubmitting" class="bg-teal-600 hover:bg-teal-700">
+                    <Button type="submit" class="bg-teal-600 hover:bg-teal-700">
                         {{ isSubmitting ? 'Submitting...' : 'Submit' }}
                     </Button>
                 </div>

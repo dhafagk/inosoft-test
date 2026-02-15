@@ -90,38 +90,48 @@ export function useLotStockOptions(
         return { batchOptions, allocationOptions, ownerOptions, conditionOptions, availableQuantity };
     }
 
-    function resetDependentFields(itemIndex: number, lotIndex: number, fromField: string): void {
+    function buildResetUpdates(itemIndex: number, lotIndex: number, fromField: string): Array<[number, number, string, any]> {
         const fromIndex = CASCADING_FIELDS.indexOf(fromField as (typeof CASCADING_FIELDS)[number]);
-        if (fromIndex === -1) return;
+        if (fromIndex === -1) return [];
 
+        const updates: Array<[number, number, string, any]> = [];
         for (let i = fromIndex + 1; i < CASCADING_FIELDS.length; i++) {
-            emit('updateLot', itemIndex, lotIndex, CASCADING_FIELDS[i], '');
+            updates.push([itemIndex, lotIndex, CASCADING_FIELDS[i], '']);
         }
-        emit('updateLot', itemIndex, lotIndex, 'owned_name', '');
-        emit('updateLot', itemIndex, lotIndex, 'available_qty', 0);
+        updates.push([itemIndex, lotIndex, 'owned_name', '']);
+        updates.push([itemIndex, lotIndex, 'available_qty', 0]);
+        return updates;
     }
 
     function handleLotFieldChange(itemIndex: number, lotIndex: number, field: string, value: any): void {
-        emit('updateLot', itemIndex, lotIndex, field, value);
-
         if (field === 'condition') {
+            emit('updateLot', itemIndex, lotIndex, field, value);
             const stockOptions = getLotStockOptions(itemIndex, lotIndex);
             emit('updateLot', itemIndex, lotIndex, 'available_qty', stockOptions.availableQuantity);
             return;
         }
 
-        resetDependentFields(itemIndex, lotIndex, field);
+        const resets = buildResetUpdates(itemIndex, lotIndex, field);
 
         if (field === 'owned') {
             const item = items.value[itemIndex];
             const stock = item?.id_item ? getOrCreateItemStock(item.id_item) : null;
             const stockRecords = stock?.stockRecords.value;
             const ownerRecord = Array.isArray(stockRecords) ? stockRecords.find((s) => s.owned === value) : null;
+            const ownedName = ownerRecord?.owned_name ?? '';
 
-            if (ownerRecord) {
-                emit('updateLot', itemIndex, lotIndex, 'owned_name', ownerRecord.owned_name);
-            }
+            emit('updateLotBatch', itemIndex, lotIndex, {
+                [field]: value,
+                ...Object.fromEntries(resets.map(([, , f, v]) => [f, v])),
+                owned_name: ownedName,
+            });
+            return;
         }
+
+        emit('updateLotBatch', itemIndex, lotIndex, {
+            [field]: value,
+            ...Object.fromEntries(resets.map(([, , f, v]) => [f, v])),
+        });
     }
 
     return { getLotStockOptions, handleLotFieldChange };

@@ -16,8 +16,8 @@ const { value, handleChange, hasError } = useFormField({ name: () => props.name 
     <Switch
         :id="name"
         :name="name"
-        :checked="value"
-        @update:checked="handleChange"
+        :model-value="value as boolean"
+        @update:model-value="handleChange"
         :disabled="disabled"
         :class="props.class"
         :aria-invalid="hasError"

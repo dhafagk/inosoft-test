@@ -17,6 +17,10 @@ const props = defineProps<{
     class?: HTMLAttributes['class'];
 }>();
 
+const emit = defineEmits<{
+    'update:modelValue': [value: string];
+}>();
+
 const { value, handleChange, hasError } = useFormField({ name: () => props.name });
 
 const open = ref(false);
@@ -60,6 +64,7 @@ const displayLabel = computed(() => {
                             :value="option.label"
                             @select="() => {
                                 handleChange(option.value);
+                                emit('update:modelValue', option.value);
                                 open = false;
                             }"
                         >
