@@ -94,16 +94,16 @@ const handleFinalSubmit = handleSubmit(async (values) => {
 </script>
 
 <template>
-    <div class="bg-white p-4 sm:p-6">
+    <div class="rounded-lg border bg-white p-4 sm:p-6">
         <div v-if="isLoading" class="flex items-center justify-center py-12">
-            <Spinner class="h-8 w-8" />
+            <Spinner class="h-8 w-8 text-teal-600" />
             <span class="ml-2 text-muted-foreground">Loading form data...</span>
         </div>
 
         <Form v-else :form-context="formContext" :submit-handler="handleFinalSubmit" class="space-y-6">
             <div>
-                <h2 class="text-2xl font-bold">Create Inspection Request</h2>
-                <p class="mt-1 text-sm text-muted-foreground">Fill in the details to create a new inspection request</p>
+                <h2 class="text-2xl font-bold">Create Yard Service Request</h2>
+                <p class="mt-1 text-sm text-muted-foreground">Fill in the details to create a new yard service request</p>
             </div>
 
             <Separator />
@@ -151,7 +151,7 @@ const handleFinalSubmit = handleSubmit(async (values) => {
                     <Button type="button" variant="secondary" @click="handleDraftSubmit" :disabled="isSubmitting">
                         {{ isSubmitting ? 'Saving...' : 'Save as Draft' }}
                     </Button>
-                    <Button type="submit" :disabled="isSubmitting">
+                    <Button type="submit" :disabled="isSubmitting" class="bg-teal-600 hover:bg-teal-700">
                         {{ isSubmitting ? 'Submitting...' : 'Submit' }}
                     </Button>
                 </div>

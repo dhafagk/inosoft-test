@@ -3,3 +3,4 @@ export { default as InspectionListLayout } from './layouts/InspectionListLayout.
 export { default as InspectionTabNavigation } from './InspectionTabNavigation.vue';
 
 export * from './forms';
+export * from './detail';

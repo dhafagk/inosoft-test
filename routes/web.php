@@ -14,3 +14,7 @@ Route::get('/inspection-record', function () {
 Route::get('/inspection-record/create', function () {
     return Inertia::render('InspectionRecordCreate');
 })->name('inspection-record.create');
+
+Route::get('/inspection-record/{no}', function (string $no) {
+    return Inertia::render('InspectionRecordDetail', ['no' => $no]);
+})->name('inspection-record.show');

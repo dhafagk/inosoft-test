@@ -106,6 +106,45 @@ export interface OrderItem {
     lots: LotRow[];
 }
 
+// --- Detail page types ---
+
+export interface DetailRecordItem {
+    item_code?: string;
+    item_desc?: string;
+    batch?: string;
+    allocation?: string;
+    owned_name?: string;
+    condition?: string;
+    customer_item_no?: string;
+    qty?: number;
+    balance?: number;
+    inspected_qty?: number;
+}
+
+export interface DetailRecordSow {
+    template_name?: string;
+    works: SowWork[];
+}
+
+export interface DetailRecord {
+    no: string;
+    status: string;
+    insp_type?: string;
+    yard_name?: string;
+    create_date?: number;
+    posting_date?: number;
+    ecd?: string;
+    link_to?: string;
+    customer?: { name: string };
+    items_raw?: DetailRecordItem[];
+    sow?: DetailRecordSow[];
+    notes?: {
+        initial?: { msg?: string; by?: string };
+    };
+}
+
+// --- Create form types ---
+
 export interface CreateInspectionForm {
     type: string;
     insp_type: string;

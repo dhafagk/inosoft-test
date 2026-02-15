@@ -29,7 +29,7 @@ const subColumns = ['Item Description', 'Ownership', 'Lot No.', 'QTY', 'Progress
     <div class="overflow-x-auto">
         <Table>
             <TableHeader>
-                <TableRow class="bg-gray-700 hover:bg-gray-700">
+                <TableRow class="bg-teal-600 hover:bg-teal-600">
                     <TableHead v-for="col in mainColumns" :key="col" class="whitespace-nowrap text-white">{{ col }}</TableHead>
                 </TableRow>
             </TableHeader>
@@ -42,7 +42,9 @@ const subColumns = ['Item Description', 'Ownership', 'Lot No.', 'QTY', 'Progress
 
                 <template v-for="item in items" :key="item.id">
                     <TableRow>
-                        <TableCell class="font-medium whitespace-nowrap">{{ item.requestNo }}</TableCell>
+                        <TableCell class="font-medium whitespace-nowrap">
+                            <a :href="`/inspection-record/${item.requestNo}`" class="text-teal-600 hover:underline">{{ item.requestNo }}</a>
+                        </TableCell>
                         <TableCell class="whitespace-nowrap">{{ item.location }}</TableCell>
                         <TableCell>{{ item.scopeOfWork }}</TableCell>
                         <TableCell class="whitespace-nowrap">{{ item.type }}</TableCell>
@@ -67,7 +69,7 @@ const subColumns = ['Item Description', 'Ownership', 'Lot No.', 'QTY', 'Progress
                             <div class="overflow-x-auto">
                                 <Table>
                                     <TableHeader>
-                                        <TableRow class="bg-gray-600 hover:bg-gray-600">
+                                        <TableRow class="bg-teal-500 hover:bg-teal-500">
                                             <TableHead v-for="col in subColumns" :key="col" class="whitespace-nowrap text-white">{{ col }}</TableHead>
                                         </TableRow>
                                     </TableHeader>
