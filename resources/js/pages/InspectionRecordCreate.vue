@@ -44,20 +44,16 @@ const handleCancel = () => {
 </script>
 
 <template>
-    <AppLayout title="Create Inspection">
+    <AppLayout title="Create Yard Service Request">
         <template #breadcrumb>
             <Breadcrumb>
                 <BreadcrumbList>
                     <BreadcrumbItem>
-                        <BreadcrumbLink href="#">Quality & HSE</BreadcrumbLink>
+                        <BreadcrumbLink href="#">Operation</BreadcrumbLink>
                     </BreadcrumbItem>
                     <BreadcrumbSeparator />
                     <BreadcrumbItem>
-                        <BreadcrumbLink href="#">Inspection</BreadcrumbLink>
-                    </BreadcrumbItem>
-                    <BreadcrumbSeparator />
-                    <BreadcrumbItem>
-                        <BreadcrumbLink href="/inspection-record">Inspection Record</BreadcrumbLink>
+                        <BreadcrumbLink href="/inspection-record" class="text-teal-600">Yard Services</BreadcrumbLink>
                     </BreadcrumbItem>
                     <BreadcrumbSeparator />
                     <BreadcrumbItem>
